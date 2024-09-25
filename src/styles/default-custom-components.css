@@ -1,0 +1,99 @@
+.customInput {
+  font-size: 12pt;
+  font-weight: 500;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  min-height: 3em;
+  border-radius: var(--default-border-radius);
+  color: var(--text);
+  border: none;
+  transition: all 0.2s ease-in-out;
+  outline: 2px solid var(--soft-color);
+  padding: var(--default-padding);
+  position: relative;
+  cursor: text;
+}
+.customInput:active svg, .customInput:focus svg {
+  fill: var(--primary-color);
+}
+.customInput:focus-within {
+  background: rgba(240, 248, 255, 0.3490196078);
+}
+.customInput > * {
+  color: "red";
+}
+@media (max-width: 600px) {
+  .customInput {
+    font-size: 10pt;
+  }
+}
+.customInput input[type=text],
+.customInput input[type=password],
+.customInput input[type=email],
+.customInput input[type=number],
+.customInput input {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  min-width: 20px;
+  outline: none;
+  border: none;
+  background: none;
+  transition: all 0.2s ease-in-out;
+  min-height: 1em;
+}
+.customInput input[type=text]:active, .customInput input[type=text]:focus,
+.customInput input[type=password]:active,
+.customInput input[type=password]:focus,
+.customInput input[type=email]:active,
+.customInput input[type=email]:focus,
+.customInput input[type=number]:active,
+.customInput input[type=number]:focus,
+.customInput input:active,
+.customInput input:focus {
+  border-bottom: 1px solid var(--contrastColor);
+}
+@media (max-width: 600px) {
+  .customInput input[type=text],
+  .customInput input[type=password],
+  .customInput input[type=email],
+  .customInput input[type=number],
+  .customInput input {
+    font-size: 10pt;
+  }
+}
+
+.customTextarea {
+  width: 100%;
+  min-height: 150px;
+  border: 0px;
+  background: none;
+}
+.customTextarea:active svg, .customTextarea:focus svg {
+  fill: var(--primary-color);
+}
+.customTextarea:focus-within {
+  background: rgba(240, 248, 255, 0.3490196078);
+}
+.customTextarea:focus-visible {
+  background: rgba(240, 248, 255, 0.3490196078);
+  border: 0;
+  outline: 0;
+}
+
+.customInput_label {
+  position: absolute;
+  top: calc(var(--default-padding) * 0.75);
+  left: var(--default-padding);
+  z-index: 2; /* ensure label is above the SVG */
+  color: black;
+  font-size: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+.customInput_label_active {
+  top: 4px;
+  left: var(--default-padding);
+  font-size: 12px;
+  color: black;
+}/*# sourceMappingURL=default-custom-components.css.map */

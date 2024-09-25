@@ -1,0 +1,215 @@
+
+:root {
+    @media (max-width: 768px) {
+        --default-padding: 40px;
+    }
+    @media (min-width: 768px) {
+        --default-padding: 20px;
+    }
+    
+    --black-text: rgba(0, 0, 0, 0.95);
+    --white-text: rgba(255, 255, 255, 0.95);
+    --primary-color: #35ff86;
+    --secondary-color: #ffffff;
+    --bg-break: rgb(26, 26, 26, 0.4);
+
+    --default-gap: 20px;
+    --small-gap: 10px;
+    --default-border-radius: 5px;
+    --default-transition: all 0.2s ease-in-out;
+}
+
+//#region DEFAULTS
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//#endregion
+
+//#region PAGE LAYOUTS / MAIN BODY
+
+.layout-box {
+    display: flex;
+    flex-direction: column;
+    gap: calc(40px + 2.5vw);
+    width: 100%;
+    height: auto;
+    padding-bottom: calc(20px + 2.5vw);
+    padding-top: calc(100px + 2.5vw);
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow: hidden;
+}
+.layout-box-home {
+    display: flex;
+    flex-direction: column;
+    gap: calc(40px + 2.5vw);
+    width: 100%;
+    height: auto;
+    padding-bottom: calc(20px + 2.5vw);
+    padding-top: calc(20px + 2.5vw);
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow: hidden;
+}
+.app-body {
+    width: 100%;
+    height: auto;
+    background-color: #0f0f0f;
+}
+
+//#endregion
+
+//#region MOBILE UTILITY CLASSES
+
+.no-mouse-event {
+    pointer-events: none;
+}
+.column-on-mobile {
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.row-on-mobile {
+    @media (max-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+//#endregion
+
+//#region ALIGNMENT UTILITY CLASSES
+
+.flexbox-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: auto;
+    width: auto;
+}
+.flexbox-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    width: auto;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--default-gap);
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+.center-column {
+    //justify-content: center;
+    align-items: center;
+}
+.center-row {
+    justify-content: center;
+    //align-items: center;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+.flex-end {
+    //justify-content: flex-end;
+    align-items: flex-end;
+}
+.flex-apart {
+    display: flex;
+    justify-content: space-between;
+}
+.small-gap {
+    gap: var(--small-gap);
+}
+.no-gap {
+    gap: 0;
+}
+.stretch-width {
+    width: 100%;
+}
+.stretch-height {
+    height: 100%;
+}
+.fit-content {
+    width: fit-content;
+    display: flex;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.no-wrap {
+    white-space: nowrap;
+}
+
+//#endregion
+
+//#region MISC UTILITY CLASSES
+
+.page {
+    width: 100%;
+    height: 100vh;
+}
+
+.not-on-mobile {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+hr {
+    align-self: center;
+    width: 100%;
+    height: 1px;
+    color: var(--white-text);
+}
+.title-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: auto;
+    width: auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.hr-heading {
+    width: 100%;
+    height: 1px;
+    color: var(--white-text);
+}
+.break-div {
+    width: 70px;
+    height: 1px;
+    background-color: var(--secondary-color);
+}
+.no-outline {
+    outline: none !important;
+}
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--soft-color);
+}
+
+//#endregion
