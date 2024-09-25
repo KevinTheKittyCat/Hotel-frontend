@@ -7,29 +7,11 @@ import ReactRouterLogo from "../assets/template/react-router-mark-color-inverted
 import BrandPattern from "../assets/template/brand_pattern.svg?react";
 
 /* Components */
-import { useEffect, useState } from "react";
-import { Popover } from "@mui/material";
 
 
 export default function Home() {
     // Cursor position update :root style
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const updateCursorPosition = (e) => {
-            setCursorPosition({ x: e.clientX, y: e.clientY });
-        }
-        window.addEventListener("mousemove", updateCursorPosition);
-        return () => window.removeEventListener("mousemove", updateCursorPosition);
-    }, []);
-
-    useEffect(() => {
-        console.log(cursorPosition);
-        console.log(window.innerWidth);
-        console.log(cursorPosition.x / window.innerWidth * 100 + "%");
-        document.documentElement.style.setProperty("--cursor-position-x", cursorPosition.x / window.innerWidth * 100 + "%");
-        document.documentElement.style.setProperty("--cursor-position-y", cursorPosition.y / window.innerHeight * 100 + "%");
-    }, [cursorPosition]);
+    
 
     return (
         <div className="home page column center stretch-width relative" >

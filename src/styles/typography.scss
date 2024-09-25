@@ -15,10 +15,6 @@
     --fs-n: calc(1rem * var(--font-scale));
     --fs-s: calc(0.75rem * var(--font-scale));
     --fs-xs: calc(0.6rem * var(--font-scale));
-
-    --ff-heading: "Karla", sans-serif;
-    --ff-accent: "Volkhov", serif;
-    --ff-body: "Inter", sans-serif;
 }
 
 //#endregion
@@ -72,10 +68,9 @@ h5 {
     font-size: var(--fs-s);
 }
 p {
-    font-family: var(--ff-body);
+    font-family: "inter", sans-serif;
     font-size: 1.125rem;
     line-height: 150%;
-    color: var(--white-text);
 }
 
 a {
@@ -157,7 +152,7 @@ a {
 .personvern-link,
 .contact-info {
     font-size: 1rem;
-    font-family: var(--ff-body);
+    font-family: "inter", sans-serif;
     text-decoration: none;
     color: var(--white-text);
 }
@@ -192,7 +187,7 @@ a {
     font-size: var(--fs-m);
 }
 .personvern-ul {
-    font-family: var(--ff-body);
+    font-family: "inter", sans-serif;
     color: var(--white-text);
     list-style-position: inside;
     font-size: 1rem;
@@ -213,7 +208,7 @@ a {
     font-style: italic;
 }
 .cta-p {
-    font-family: var(--ff-body);
+    font-family: "inter", sans-serif;
     font-size: var(--fs-n);
 }
 
