@@ -1,0 +1,34 @@
+.room-card {
+  height: 100%;
+}
+.room-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.room-card h2 {
+  font-size: var(--fs-n);
+}
+
+.room-info {
+  gap: 10px;
+}
+
+.filter {
+  width: 200px;
+}
+@media (max-width: 600px) {
+  .filter {
+    display: none;
+  }
+}
+.filter > .customInput {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .filter-button {
+    display: none;
+  }
+}/*# sourceMappingURL=rooms.css.map */

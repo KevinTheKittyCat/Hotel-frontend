@@ -1,0 +1,39 @@
+.room-card {
+    height: 100%;
+    img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+    h2 {
+        font-size: var(--fs-n);
+    }
+}
+
+.room-info {
+    gap: 10px;
+}
+
+
+
+
+// Filter
+
+.filter {
+    @media (max-width: 600px) {
+        display: none;
+    }
+
+    width: 200px;
+
+    & > .customInput {
+        width: 100%;
+    }
+}
+
+.filter-button {
+    @media (min-width: 600px) {
+        display: none;
+    }
+
+}

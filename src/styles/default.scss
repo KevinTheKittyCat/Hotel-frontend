@@ -1,12 +1,4 @@
-
 :root {
-    @media (max-width: 768px) {
-        --default-padding: 40px;
-    }
-    @media (min-width: 768px) {
-        --default-padding: 20px;
-    }
-    
     --black-text: rgba(0, 0, 0, 0.95);
     --white-text: rgba(255, 255, 255, 0.95);
     --primary-color: #35ff86;
@@ -15,6 +7,7 @@
 
     --default-gap: 20px;
     --small-gap: 10px;
+    --default-padding: 1.2em;
     --default-border-radius: 5px;
     --default-transition: all 0.2s ease-in-out;
 }
@@ -163,6 +156,16 @@ button {
 .no-wrap {
     white-space: nowrap;
 }
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
 //#endregion
 
@@ -170,7 +173,9 @@ button {
 
 .page {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    padding-inline: 10%;
+    padding-block: 100px;
 }
 
 .not-on-mobile {

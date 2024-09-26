@@ -6,18 +6,9 @@
   --bg-break: rgb(26, 26, 26, 0.4);
   --default-gap: 20px;
   --small-gap: 10px;
+  --default-padding: 1.2em;
   --default-border-radius: 5px;
   --default-transition: all 0.2s ease-in-out;
-}
-@media (max-width: 768px) {
-  :root {
-    --default-padding: 40px;
-  }
-}
-@media (min-width: 768px) {
-  :root {
-    --default-padding: 20px;
-  }
 }
 
 html {
@@ -168,9 +159,23 @@ button {
   white-space: nowrap;
 }
 
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
 .page {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding-inline: 10%;
+  padding-block: 100px;
 }
 
 @media (max-width: 768px) {

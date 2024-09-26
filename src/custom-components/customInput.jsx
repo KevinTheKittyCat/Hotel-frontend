@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, forwardRef, useState } from 'react';
-//import { ReactComponent as EditIcon } from '../../assets/icons/material-symbols_edit.svg';
+import { useEffect, useRef, forwardRef, useState } from 'react';
+import '../styles/default-custom-components.css';
 
 const CustomInput = forwardRef((props, ref) => {
     const inputRef = useRef();
@@ -52,27 +52,9 @@ const CustomInput = forwardRef((props, ref) => {
                     setFocused(false);
                     if (props.onBlur) props?.onBlur(e);
                 }}
-            // To avoid duplicate props and issues with forwarding unknown props to the input, 
-            // we destructure the ones we're using and pass the rest.
-
             />
 
             {props?.suffix && <p style={{ whiteSpace: "nowrap" }} className='suffix'>{props?.suffix}</p>}
-
-            {props?.suggestions &&
-                <div className="suggestions" style={{ position: 'absolute', width: '100%', top: '100%', left: 0, zIndex: 100, backgroundColor: 'white', boxShadow: '0px 0px 10px 0px #00000020' }}>
-                    {props?.suggestions.map((suggestion, index) => {
-                        return <button className='row suggestion' style={{ padding: '1rem', borderBottom: '1px solid #00000020', width: '100%', justifyContent: 'flex-start', display: 'flex', background: 'transparent', color: 'black', borderRadius: 0 }}
-                            key={index} onClick={() => {
-                                props?.onSuggestion(suggestion);
-                            }}>
-                            <h3>{suggestion?.navn || suggestion?.name}</h3>
-                            <h3>{suggestion?.organisasjonsnummer || suggestion?.orgNumber} </h3>
-                            <h3>{suggestion?.forretningsadresse?.adresse[0] || suggestion?.businessAddress} </h3>
-                        </button>
-                    })}
-                </div>
-            }
         </div>
     );
 });
@@ -81,7 +63,6 @@ export default CustomInput;
 
 
 function formatString(stringUntempered, pattern) {
-    console.log(pattern)
     if (!stringUntempered) return '';
     if (!pattern) return stringUntempered;
     if (pattern?.length === 0) return stringUntempered;

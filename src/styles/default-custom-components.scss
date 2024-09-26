@@ -1,20 +1,17 @@
 .customInput {
     font-size: 12pt;
     font-weight: 500;
-    width: stretch;
-    min-height: 3em;
-    //background-color: black;
+    min-height: 2em;
     border-radius: var(--default-border-radius);
     color: var(--text);
     border: none;
-    //border-bottom: 1px solid var(--active-color);
     transition: all 0.2s ease-in-out;
     outline: 2px solid var(--soft-color);
-    //box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     padding: var(--default-padding);
     position: relative;
     cursor: text;
-    //outline: 0px solid var(--primary-color);
+    border: 2px solid var(--bg-break);
+    min-width: 160px;
 
     &:active,
     &:focus {
@@ -25,7 +22,7 @@
 
     &:focus-within {
         background: #f0f8ff59;
-        //outline: 2px solid var(--primary-color); // Example style when the child input is focused
+        border: 2px solid var(--primary-color);
     }
 
     > * {

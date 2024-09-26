@@ -8,7 +8,7 @@ import Home from "./pages/home.jsx";
 
 import "./styles/default.css";
 import "./styles/typography.css";
-import "./styles/utils.css";
+
 
 /*---------STYLES-------*/
 
@@ -24,13 +24,14 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
+import RoomsPage from "./pages/RoomsPage.jsx";
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Home />} />
-      <Route path="/" element={<Home />} />
+      <Route path="/rooms" element={<RoomsPage />} />
     </Route>
   )
 );
