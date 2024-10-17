@@ -15,10 +15,17 @@
 */
 
 import { Bed, CurrencyPoundRounded, People } from "@mui/icons-material";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RoomCard({ room }) {
+    const navigate = useNavigate();
+    
+    const navigateToRoom = () => {
+        navigate(`/rooms/${room.id}`);
+    }
+
     return (
-        <div className="room-card column">
+        <button className="room-card column" onClick={navigateToRoom}>
             <img src={room.image} alt={room.name} />
             <div className="room-info column stretch-height flex-apart">
                 <div className="column">
@@ -31,6 +38,6 @@ export default function RoomCard({ room }) {
                     <p><CurrencyPoundRounded /> {room.price}</p>
                 </div>
             </div>
-        </div>
+        </button>
     );
 }

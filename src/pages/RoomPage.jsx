@@ -8,7 +8,7 @@ import { getBookingsById, getRoomById } from "../database/rooms";
 
 
 
-export default function Room() {
+export default function RoomPage() {
     const params = useParams();
     const { data } = useCustomSingleFetch(getRoomById, params.id);
     const { bookings } = useCustomFetch(getBookingsById, params.id, "bookings");

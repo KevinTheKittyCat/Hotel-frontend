@@ -27,6 +27,7 @@ import {
 import RoomsPage from "./pages/RoomsPage.jsx";
 import store from "./stores/mainStore.jsx";
 import { Provider } from "react-redux";
+import RoomPage from "./pages/RoomPage.jsx";
 
 
 const router = createBrowserRouter(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
     <Route>
       <Route path="/" element={<Home />} />
       <Route path="/rooms" element={<RoomsPage />} />
+      <Route path="/rooms/:id" element={<RoomPage />} />
     </Route>
   )
 );
