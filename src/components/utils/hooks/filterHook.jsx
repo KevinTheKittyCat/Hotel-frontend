@@ -12,7 +12,8 @@ export function useFilter(items = [], filter = {}, key) {
 
     useEffect(() => {
         if (!items) return;
-        let itemsToSearch = items;
+        let itemsToSearch = [...items];
+        console.log(itemsToSearch);
 
         strict.forEach(({ key, operator = "===", value }) => {
             console.log(key, operator, value);

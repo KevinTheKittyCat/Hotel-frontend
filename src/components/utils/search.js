@@ -32,8 +32,9 @@ export function searchObjects(objectArray, searchString, searchTerms, keysToSear
             }
         }
 
-        object.score = score;
-        results.push(object);
+        //object.score = score;
+        const newObject = { ...object, score };
+        results.push(newObject);
     }
 
     return sortObjects(results);
