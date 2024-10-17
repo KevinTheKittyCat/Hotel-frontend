@@ -45,7 +45,7 @@ const CustomInput = forwardRef((props, ref) => {
                 className={props.className}
                 type={props?.type || "text"}
                 onChange={props.onChange}
-                value={formatString(props?.value, props?.inputPattern)}
+                
                 placeholder={props?.label ? null : props?.placeholder}
                 onClick={props?.onClick}
                 onBlur={(e) => {
