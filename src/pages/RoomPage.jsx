@@ -1,13 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { useCustomSingleFetch } from "../components/utils/hooks/fetchSingle";
-import { useCustomFetch } from "../components/utils/hooks/fetchHook";
-import { getBookingsById, getRoomById } from "../database/rooms";
 import DefaultWrapper from "../components/deafultWrapper";
 import { useSelector } from "react-redux";
 import ErrorPage from "./ErrorPage";
-import BackButton from "../components/utils/backButton";
-import { Favorite } from "@mui/icons-material";
-import { useEffect, useState } from "react";
 import RoomTopBar from "../components/room/top-bar";
 import RoomImages from "../components/room/room-images";
 import RoomInfo from "../components/room/roomInfo";
