@@ -8,7 +8,9 @@ export default function DefaultWrapper({ children }) {
     return (
         <div id="Default-wrapper" className="default-wrapper page column">
             <Header />
-            {children}
+            <div className="default-wrapper-content column">
+                {children}
+            </div>
         </div>
     )
 }

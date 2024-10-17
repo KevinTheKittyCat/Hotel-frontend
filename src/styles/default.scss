@@ -178,6 +178,12 @@ button {
     padding-block: 100px;
 }
 
+.default-wrapper-content {
+    margin-inline: auto;
+    max-width: 1080px;
+    width: 100%;
+}
+
 .not-on-mobile {
     @media (max-width: 768px) {
         display: none;
