@@ -19,7 +19,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function RoomCard({ room }) {
     const navigate = useNavigate();
-    
     const navigateToRoom = () => {
         navigate(`/rooms/${room.id}`);
     }

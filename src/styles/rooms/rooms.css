@@ -43,23 +43,45 @@
   grid-template-rows: repeat(2, 50%);
   gap: 10px;
   max-height: 300px;
-  max-width: 100%;
+  max-width: calc(100% - 20px);
   width: 100%;
-  align-items: center;
-  justify-items: center;
+  align-items: stretch;
+  justify-items: stretch;
+}
+.room-images .room-image-wrapper {
+  display: flex;
+  grid-column: span 1;
+  grid-row: span 1;
+  border-radius: var(--default-border-radius);
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
-.room-images img {
+.room-images .room-image-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: var(--default-border-radius);
 }
-.room-images img:nth-child(n+6) {
+.room-images .room-image-wrapper:nth-child(n+6) {
   display: none;
 }
-.room-images img:first-child {
+.room-images .room-image-wrapper:first-child {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.more-room-images {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: var(--black-text);
+  color: var(--white-text);
+  padding: 0.6em 1em;
+  border-radius: var(--default-border-radius);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.475);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid var(--white-text);
 }/*# sourceMappingURL=rooms.css.map */

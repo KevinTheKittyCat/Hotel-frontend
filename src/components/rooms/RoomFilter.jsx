@@ -70,7 +70,7 @@ export default function RoomFilter({ value, items, onChange, dates }) {
         <div className="filter column">
             <CustomInput label="Room Name" value={searchString} onChange={(e) => setSearchString(e.target.value)} />
             <CustomInput label="Capacity" type="number" onChange={(e) => setStrictValue("capacity", ">=", e.target.value)} />
-            <Box sx={{ width: 300 }}>
+            {/*<Box sx={{ width: 300 }}>
                 <Slider
 
                     getAriaLabel={() => 'Minimum distance'}
@@ -83,6 +83,7 @@ export default function RoomFilter({ value, items, onChange, dates }) {
                     max={100000}
                 />
             </Box>
+            */}
         </div>
     );
 }

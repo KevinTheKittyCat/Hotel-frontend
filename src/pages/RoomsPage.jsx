@@ -8,13 +8,14 @@ import RoomFilter from "../components/rooms/RoomFilter";
 import { useDispatch, useSelector } from "react-redux";
 import { addRoom } from "../stores/roomsSlice";
 import DefaultWrapper from "../components/deafultWrapper";
+import { GridView, ViewList } from "@mui/icons-material";
 
 
 
 
 export default function RoomsPage() {
     const { roomsToGet } = useCustomFetch(getRooms, {}, "roomsToGet");
-
+    const [list, setList] = useState([]);
     // Should have been in a hook but didnt have time - and you wanted to see frontend.
     const rooms = useSelector((state) => state.rooms.all);
     const dispatch = useDispatch();
@@ -39,13 +40,15 @@ export default function RoomsPage() {
                     <CustomInput label="From" type="date" value={dates.fromDate} onChange={(e) => setDates({ ...dates, fromDate: e.target.value })} />
                     <CustomInput label="To" type="date" value={dates.toDate} onChange={(e) => setDates({ ...dates, toDate: e.target.value })} />
                 </div>
+                <button className="default-button" onClick={() => setList(old => !list)}> {list ? <ViewList/> : <GridView/>} </button>
+
             </div>
 
             <div className="row column-on-mobile">
                 <RoomFilter items={rooms} onChange={(filteredData) => setFilteredRooms(filteredData)} dates={dates} />
                 <div className="rooms-list row wrap center grid3 stretch-width">
                     {filteredRooms?.map(room => (
-                        <RoomCard key={room.id} room={room} />
+                        <RoomCard key={room.id} room={room} list={list} />
                     ))}
                 </div>
             </div>

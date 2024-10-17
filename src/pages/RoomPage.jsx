@@ -10,6 +10,7 @@ import { Favorite } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import RoomTopBar from "../components/room/top-bar";
 import RoomImages from "../components/room/room-images";
+import RoomInfo from "../components/room/roomInfo";
 
 
 
@@ -25,6 +26,7 @@ export default function RoomPage() {
         <DefaultWrapper>
             <RoomTopBar room={room} />
             <RoomImages images={images} />
+            <RoomInfo room={room} />
         </DefaultWrapper>
     )
 }

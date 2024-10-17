@@ -38,25 +38,32 @@
 .room-images-wrapper {
     position: relative;
 }
+
 .room-images {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(2, 50%);
     gap: 10px;
     max-height: 300px;
-    max-width: 100%;
+    max-width: calc(100% - 20px); // 20px is the gap
     width: 100%;
-    align-items: center;
-    justify-items: center;
-    overflow: hidden;
+    align-items: stretch;
+    justify-items: stretch;
 
-    img {
-        //grid-column: span 1;
-        //grid-row: span 1;
+    .room-image-wrapper {
+        display: flex;
+        grid-column: span 1;
+        grid-row: span 1;
+        border-radius: var(--default-border-radius);
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        border-radius: var(--default-border-radius);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         // Any child over the first 5 will be hidden
         &:nth-child(n + 6) {
@@ -68,4 +75,18 @@
             grid-row: span 2;
         }
     }
+}
+
+.more-room-images {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background: var(--black-text);
+    color: var(--white-text);
+    padding: 0.6em 1em;
+    border-radius: var(--default-border-radius);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.475);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--white-text);
 }
