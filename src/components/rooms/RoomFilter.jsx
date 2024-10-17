@@ -25,11 +25,13 @@ export default function RoomFilter({ value, items, onChange, dates }) {
         onChange(filteredData);
     }, [filteredData]);
 
+    /* Removed till Bookings are implemented.
     useEffect(() => {
         // Set the dates in the filter - Used to filter rooms by availability
         setStrictValue("fromDate", ">=", dates.fromDate);
         setStrictValue("toDate", "<=", dates.toDate);
     }, [dates]);
+    */
 
     // Set a strict value in the filter - strict values are used to filter rooms by exact values
     const setStrictValue = (key, operator, value) => {
