@@ -23,6 +23,16 @@ button {
     cursor: pointer;
 }
 
+.default-button, .primary-button {
+    padding: 0.7em 1.2em;
+}
+
+.primary-button {
+    background: var(--primary-color);
+    color: var(--black-text);
+    border-radius: var(--default-border-radius);
+}
+
 * {
     margin: 0;
     padding: 0;
