@@ -3,7 +3,14 @@ import { useFilter } from "../utils/hooks/filterHook";
 import CustomInput from "../../custom-components/customInput";
 
 
-
+/**
+ * 
+ * @param {object} props - The props object
+ * @param {object} props.value - The value to filter by
+ * @param {array} props.items - The items to filter
+ * @param {function} props.onChange - The function to call when the items are filtered
+ * @param {object} props.dates - The dates to filter by - Specifically used to filter rooms by availability
+**/
 
 export default function RoomFilter({ value, items, onChange, dates }) {
     const [filter, setFilter] = useState(value || {
@@ -14,14 +21,17 @@ export default function RoomFilter({ value, items, onChange, dates }) {
     const { filteredData, searchString, setSearchString } = useFilter(items, filter, "rooms");
 
     useEffect(() => {
+        // Send the filtered data back to the parent component
         onChange(filteredData);
     }, [filteredData]);
 
     useEffect(() => {
+        // Set the dates in the filter - Used to filter rooms by availability
         setStrictValue("fromDate", ">=", dates.fromDate);
         setStrictValue("toDate", "<=", dates.toDate);
     }, [dates]);
 
+    // Set a strict value in the filter - strict values are used to filter rooms by exact values
     const setStrictValue = (key, operator, value) => {
         setFilter(old => {
             const removeOldFilter = old.strict.filter(f => f.key !== key);
