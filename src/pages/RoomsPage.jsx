@@ -21,11 +21,11 @@ export default function RoomsPage() {
     const [filteredRooms, setFilteredRooms] = useState(rooms);
     const [dates, setDates] = useState({
         fromDate: formatDate(new Date()),
-        toDate: formatDate(new Date()),
+        toDate: formatDate(new Date(new Date().getTime() + (24 * 60 * 60 * 1000 * 7))),
     });
 
     useEffect(() => {
-        //if (rooms.length === 0) return; //Due to the way the useEffect works, it will run once before the rooms are added to the store. This is a quick fix.
+        // This is a quick fix. - the "roomsToGet" should be fetched in a hook.
         roomsToGet?.forEach(room =>
             dispatch(addRoom({document:{...room}}))
         );
@@ -41,7 +41,7 @@ export default function RoomsPage() {
             </div>
 
             <div className="row column-on-mobile">
-                <RoomFilter items={rooms} onChange={(filteredData) => setFilteredRooms(filteredData)} />
+                <RoomFilter items={rooms} onChange={(filteredData) => setFilteredRooms(filteredData)} dates={dates}/>
                 <div className="rooms-list row wrap center grid3 stretch-width">
                     {filteredRooms?.map(room => (
                         <RoomCard key={room.id} room={room} />

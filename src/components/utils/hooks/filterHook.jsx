@@ -13,14 +13,13 @@ export function useFilter(items = [], filter = {}, key) {
     useEffect(() => {
         if (!items) return;
         let itemsToSearch = [...items];
-        console.log(itemsToSearch);
 
         strict.forEach(({ key, operator = "===", value }) => {
-            console.log(key, operator, value);
             itemsToSearch = itemsToSearch.filter(item => {
                 return checkOperator(value, operator, item, key);
             });
         });
+        
         const filteredObjects = searchObjects(itemsToSearch, searchString, searchTerms, keys);
         setFilteredData(old => filteredObjects);
     }, [items.length, searchString, JSON.stringify(searchTerms), JSON.stringify(keys), JSON.stringify(filter)]);

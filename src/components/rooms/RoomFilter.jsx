@@ -5,7 +5,7 @@ import CustomInput from "../../custom-components/customInput";
 
 
 
-export default function RoomFilter({ value, items, onChange }) {
+export default function RoomFilter({ value, items, onChange, dates }) {
     const [filter, setFilter] = useState(value || {
         strict: [
             { key: "capacity", operator: ">=", value: 0 },
@@ -16,11 +16,16 @@ export default function RoomFilter({ value, items, onChange }) {
     useEffect(() => {
         onChange(filteredData);
     }, [filteredData]);
-    
-    const setStrictValue = (key, value) => {
+
+    useEffect(() => {
+        setStrictValue("fromDate", ">=", dates.fromDate);
+        setStrictValue("toDate", "<=", dates.toDate);
+    }, [dates]);
+
+    const setStrictValue = (key, operator, value) => {
         setFilter(old => {
             const removeOldFilter = old.strict.filter(f => f.key !== key);
-            return { ...old, strict: [...removeOldFilter, { key, operator: ">=", value }] }
+            return { ...old, strict: [...removeOldFilter, { key, operator, value }] }
         });
         console.log(filter);
     }
@@ -28,7 +33,7 @@ export default function RoomFilter({ value, items, onChange }) {
     return (
         <div className="filter column">
             <CustomInput label="Room Name" value={searchString} onChange={(e) => setSearchString(e.target.value)} />
-            <CustomInput label="Capacity" type="number" onChange={(e) => setStrictValue("capacity", e.target.value)} />
+            <CustomInput label="Capacity" type="number" onChange={(e) => setStrictValue("capacity", ">=", e.target.value)} />
         </div>
     );
 }
