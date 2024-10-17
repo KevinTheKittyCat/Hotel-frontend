@@ -1,0 +1,29 @@
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8196078431);
+  padding: 0 10%;
+  border-bottom: 1px solid var(--primary-color);
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.nav-button {
+  padding: var(--default-padding);
+}
+.nav-button:first-child {
+  padding-left: 0px;
+}
+.nav-button:last-child {
+  padding-right: 0px;
+}
+
+.nav-button, .nav-button a {
+  color: var(--black-text);
+}
+.nav-button .active, .nav-button a .active {
+  color: var(--primary-color);
+}/*# sourceMappingURL=header.css.map */

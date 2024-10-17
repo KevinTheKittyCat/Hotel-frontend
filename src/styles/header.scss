@@ -1,0 +1,30 @@
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffffd1;
+    padding: 0 10%;
+    border-bottom: 1px solid var(--primary-color);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-button {
+    padding: var(--default-padding);
+    
+    &:first-child {
+        padding-left: 0px;
+    }
+
+    &:last-child {
+        padding-right: 0px;
+    }
+}
+
+.nav-button, .nav-button a {
+    color: var(--black-text);
+    .active {
+        color: var(--primary-color);
+    }
+}

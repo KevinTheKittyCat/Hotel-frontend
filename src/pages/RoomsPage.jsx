@@ -7,6 +7,7 @@ import "../styles/rooms/rooms.css";
 import RoomFilter from "../components/rooms/RoomFilter";
 import { useDispatch, useSelector } from "react-redux";
 import { addRoom } from "../stores/roomsSlice";
+import DefaultWrapper from "../components/deafultWrapper";
 
 
 
@@ -27,12 +28,12 @@ export default function RoomsPage() {
     useEffect(() => {
         // This is a quick fix. - the "roomsToGet" should be fetched in a hook.
         roomsToGet?.forEach(room =>
-            dispatch(addRoom({document:{...room}}))
+            dispatch(addRoom({ document: { ...room } }))
         );
     }, [roomsToGet]);
 
     return (
-        <div className="page column">
+        <DefaultWrapper>
             <div className="flex-apart row">
                 <div className="date-pickers row">
                     <CustomInput label="From" type="date" value={dates.fromDate} onChange={(e) => setDates({ ...dates, fromDate: e.target.value })} />
@@ -41,7 +42,7 @@ export default function RoomsPage() {
             </div>
 
             <div className="row column-on-mobile">
-                <RoomFilter items={rooms} onChange={(filteredData) => setFilteredRooms(filteredData)} dates={dates}/>
+                <RoomFilter items={rooms} onChange={(filteredData) => setFilteredRooms(filteredData)} dates={dates} />
                 <div className="rooms-list row wrap center grid3 stretch-width">
                     {filteredRooms?.map(room => (
                         <RoomCard key={room.id} room={room} />
@@ -49,7 +50,7 @@ export default function RoomsPage() {
                 </div>
             </div>
 
-        </div>
+        </DefaultWrapper>
     );
 }
 
