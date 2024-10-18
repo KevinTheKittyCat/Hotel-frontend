@@ -10,7 +10,7 @@ import RoomInfo from "../components/room/roomInfo";
 
 export default function RoomPage() {
     const params = useParams();
-    const room = useSelector((state) => state.rooms.byId[params.id]);
+    const room = useSelector((state ) => state.rooms.byId[params.id]);
     const navigate = useNavigate();
 
     const images = ["https://picsum.photos/300/200", ...Array(10).fill("https://picsum.photos/200/300")];

@@ -12,7 +12,7 @@
  * }
 */
 export type RoomType = {
-    id: number;
+    id: string;
     reference: string;
     price: number;
     type: string;
@@ -38,7 +38,7 @@ export type RoomType = {
  * }
  */
 export type BookingType = {
-    id: number;
+    id: string;
     roomId: number;
     fromDate: Date;
     toDate: Date;

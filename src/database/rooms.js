@@ -2,7 +2,7 @@
 
 const rooms = [
     {
-        id: 1,
+        id: "1",
         reference: "A1",
         price: 100,
         type: "single",
@@ -12,7 +12,7 @@ const rooms = [
         name: "Romslig enkeltrom",
     },
     {
-        id: 2,
+        id: "2",
         reference: "A2",
         price: 150,
         type: "double",
@@ -22,7 +22,7 @@ const rooms = [
         name: "Romslig dobbeltrom",
     },
     {
-        id: 3,
+        id: "3",
         reference: "A3",
         price: 200,
         type: "family",
@@ -32,7 +32,7 @@ const rooms = [
         name: "Romslig familierom",
     },
     {
-        id: 4,
+        id: "4",
         reference: "A4",
         price: 250,
         type: "suite",
@@ -42,7 +42,7 @@ const rooms = [
         name: "Romslig suite",
     },
     {
-        id: 5,
+        id: "5",
         reference: "A5",
         price: 300,
         type: "suite",
@@ -52,7 +52,7 @@ const rooms = [
         name: "Romslig suite",
     },
     {
-        id: 6,
+        id: "6",
         reference: "A6",
         price: 350,
         type: "suite",
@@ -62,7 +62,7 @@ const rooms = [
         name: "Romslig suite",
     },
     {
-        id: 7,
+        id: "7",
         reference: "A7",
         price: 400,
         type: "suite",
@@ -72,7 +72,7 @@ const rooms = [
         name: "Romslig suite",
     },
     {
-        id: 8,
+        id: "8",
         reference: "A8",
         price: 450,
         type: "suite",
@@ -85,7 +85,7 @@ const rooms = [
 
 const bookings = [
     {
-        id: 1,
+        id: "1",
         roomId: 1,
         fromDate: new Date(new Date().setDate(new Date().getDate() + 3)),
         toDate: new Date(new Date().setDate(new Date().getDate() + 7)),
@@ -96,7 +96,7 @@ const bookings = [
         }
     },
     {
-        id: 2,
+        id: "2",
         roomId: 2,
         fromDate: new Date(new Date().setDate(new Date().getDate() + 10)),
         toDate: new Date(new Date().setDate(new Date().getDate() + 14)),
@@ -107,7 +107,7 @@ const bookings = [
         }
     },
     {
-        id: 3,
+        id: "3",
         roomId: 3,
         fromDate: new Date(new Date().setDate(new Date().getDate() + 17)),
         toDate: new Date(new Date().setDate(new Date().getDate() + 21)),
