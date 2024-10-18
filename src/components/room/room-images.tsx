@@ -1,17 +1,20 @@
-import { Image } from "@mui/icons-material"
+import React from 'react';
+import { Image } from "@mui/icons-material";
+
+type RoomImagesProps = {
+    images: string[];
+};
+
+const RoomImages = ({ images }: RoomImagesProps): JSX.Element => {
 
 
-
-
-
-export default function RoomImages({ images }) {
 
     return (
         <div className="room-images-wrapper">
             <div className="more-room-images row">
                 <Image /> <p>{images.length}</p>
             </div>
-            
+
             <div className="room-images column">
                 {images.map((image, index) => {
                     return (
@@ -24,3 +27,5 @@ export default function RoomImages({ images }) {
         </div>
     )
 }
+
+export default RoomImages;
