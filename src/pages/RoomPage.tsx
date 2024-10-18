@@ -1,17 +1,23 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import DefaultWrapper from "../components/deafultWrapper";
 import { useSelector } from "react-redux";
 import ErrorPage from "./ErrorPage";
 import RoomTopBar from "../components/room/top-bar";
 import RoomImages from "../components/room/room-images";
 import RoomInfo from "../components/room/roomInfo";
+import React from "react";
+import { RootState } from "../stores/mainStore";
 
 
 
 export default function RoomPage() {
-    const params = useParams();
-    const room = useSelector((state ) => state.rooms.byId[params.id]);
-    const navigate = useNavigate();
+    const params = useParams<{ id: string }>();
+    
+    if (!params.id) {
+        return <ErrorPage message={"No Room Found"} />;
+    }
+
+    const room = useSelector((state:RootState ) => state.rooms.byId[params.id || ""]);
 
     const images = ["https://picsum.photos/300/200", ...Array(10).fill("https://picsum.photos/200/300")];
 

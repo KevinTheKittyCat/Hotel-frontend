@@ -1,6 +1,6 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import roomsSlice from './roomsSlice.ts';
+import roomsSlice from './roomsSlice.js';
 
 const store = configureStore({
     //user / auth
@@ -10,3 +10,4 @@ const store = configureStore({
 });
 
 export default store;
+export type RootState = ReturnType<typeof store.getState>;
